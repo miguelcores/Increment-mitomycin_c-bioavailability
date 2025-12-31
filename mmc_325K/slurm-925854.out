@@ -1,479 +1,0 @@
-
-The following have been reloaded with a version change:
-  1) GCCcore/13.3.0 => GCCcore/12.2.0
-  2) UCX/1.16.0-GCCcore-13.3.0 => UCX/1.13.1-GCCcore-12.2.0
-  3) binutils/2.42-GCCcore-13.3.0 => binutils/2.39-GCCcore-12.2.0
-  4) numactl/2.0.18-GCCcore-13.3.0 => numactl/2.0.16-GCCcore-12.2.0
-  5) zlib/1.3.1-GCCcore-13.3.0 => zlib/1.2.12-GCCcore-12.2.0
-
-
-The following have been reloaded with a version change:
-  1) GCC/12.2.0 => GCC/11.2.0
-  2) GCCcore/12.2.0 => GCCcore/11.2.0
-  3) OpenMPI/4.1.4-GCC-12.2.0 => OpenMPI/4.1.1-GCC-11.2.0
-  4) PMIx/4.2.2-GCCcore-12.2.0 => PMIx/4.1.0-GCCcore-11.2.0
-  5) UCX/1.13.1-GCCcore-12.2.0 => UCX/1.11.2-GCCcore-11.2.0
-  6) XZ/5.2.7-GCCcore-12.2.0 => XZ/5.2.5-GCCcore-11.2.0
-  7) binutils/2.39-GCCcore-12.2.0 => binutils/2.37-GCCcore-11.2.0
-  8) hwloc/2.8.0-GCCcore-12.2.0 => hwloc/2.5.0-GCCcore-11.2.0
-  9) libevent/2.1.12-GCCcore-12.2.0 => libevent/2.1.12-GCCcore-11.2.0
- 10) libfabric/1.16.1-GCCcore-12.2.0 => libfabric/1.13.2-GCCcore-11.2.0
- 11) libpciaccess/0.17-GCCcore-12.2.0 => libpciaccess/0.16-GCCcore-11.2.0
- 12) libxml2/2.10.3-GCCcore-12.2.0 => libxml2/2.9.10-GCCcore-11.2.0
- 13) numactl/2.0.16-GCCcore-12.2.0 => numactl/2.0.14-GCCcore-11.2.0
- 14) zlib/1.2.12-GCCcore-12.2.0 => zlib/1.2.11-GCCcore-11.2.0
-
-GROMACS VERSION USED FOR ANALYSIS:
-                 :-) GROMACS - gmx, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx --version
-
-GROMACS version:    2021.5-EasyBuild-4.7.1
-Precision:          mixed
-Memory model:       64 bit
-MPI library:        thread_mpi
-OpenMP support:     enabled (GMX_OPENMP_MAX_THREADS = 64)
-GPU support:        disabled
-SIMD instructions:  AVX_512
-FFT library:        fftw-3.3.10-sse2-avx-avx2-avx2_128
-RDTSCP usage:       enabled
-TNG support:        enabled
-Hwloc support:      disabled
-Tracing support:    disabled
-C compiler:         /media/apps/avx512-2021/software/OpenMPI/4.1.1-GCC-11.2.0/bin/mpicc GNU 11.2.0
-C compiler flags:   -mavx512f -mfma -Wno-missing-field-initializers -fexcess-precision=fast -funroll-all-loops -O3 -DNDEBUG
-C++ compiler:       /media/apps/avx512-2021/software/OpenMPI/4.1.1-GCC-11.2.0/bin/mpicxx GNU 11.2.0
-C++ compiler flags: -mavx512f -mfma -Wno-missing-field-initializers -fexcess-precision=fast -funroll-all-loops -fopenmp -O3 -DNDEBUG
-
-              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx energy, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx energy -f em.edr -o potential.xvg
-
-Opened em.edr as single precision energy file
-
-Select the terms you want from the following list by
-selecting either (part of) the name or the number or a combination.
-End your selection with an empty line or a zero.
--------------------------------------------------------------------
-  1  G96Bond          2  G96Angle         3  Proper-Dih.      4  Improper-Dih. 
-  5  LJ-14            6  Coulomb-14       7  LJ-(SR)          8  Coulomb-(SR)  
-  9  Coul.-recip.    10  Potential       11  Pressure        12  Vir-XX        
- 13  Vir-XY          14  Vir-XZ          15  Vir-YX          16  Vir-YY        
- 17  Vir-YZ          18  Vir-ZX          19  Vir-ZY          20  Vir-ZZ        
- 21  Pres-XX         22  Pres-XY         23  Pres-XZ         24  Pres-YX       
- 25  Pres-YY         26  Pres-YZ         27  Pres-ZX         28  Pres-ZY       
- 29  Pres-ZZ         30  #Surf*SurfTen   31  T-rest        
-
-Reading energy frame      0 time    0.000         Reading energy frame      1 time    1.000         Reading energy frame      2 time    2.000         Reading energy frame      3 time    3.000         Reading energy frame      4 time    4.000         Reading energy frame      5 time    5.000         Reading energy frame      6 time    6.000         Reading energy frame      7 time    7.000         Reading energy frame      8 time    8.000         Reading energy frame      9 time    9.000         Reading energy frame     10 time   10.000         Reading energy frame     11 time   12.000         Reading energy frame     12 time   13.000         Reading energy frame     13 time   14.000         Reading energy frame     14 time   16.000         Reading energy frame     15 time   17.000         Reading energy frame     16 time   18.000         Reading energy frame     17 time   20.000         Reading energy frame     18 time   21.000         Reading energy frame     19 time   22.000         Reading energy frame     20 time   24.000         Reading energy frame     30 time   36.000         Reading energy frame     40 time   49.000         Reading energy frame     50 time   62.000         Reading energy frame     60 time   74.000         Reading energy frame     70 time   88.000         Reading energy frame     80 time  100.000         Reading energy frame     90 time  113.000         Reading energy frame    100 time  126.000         Reading energy frame    110 time  138.000         Reading energy frame    120 time  151.000         Reading energy frame    130 time  164.000         Reading energy frame    140 time  176.000         Reading energy frame    150 time  189.000         Reading energy frame    160 time  202.000         Reading energy frame    170 time  214.000         Reading energy frame    180 time  227.000         Reading energy frame    190 time  240.000         Reading energy frame    200 time  252.000         Last energy frame read 201 time  254.000         
-
-GROMACS reminds you: "Science is the great antidote to the poison of enthusiasm and superstition." (Adam Smith, Wealth of Nations, 1776)
-
-
-Statistics over 255 steps [ 0.0000 through 254.0000 ps ], 1 data sets
-All statistics are over 202 points (frames)
-
-Energy                      Average   Err.Est.       RMSD  Tot-Drift
--------------------------------------------------------------------------------
-Potential                   -186536       5400    14085.8   -36462.1  (kJ/mol)
-              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx energy, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx energy -f nvt.edr -o temperature.xvg
-
-Opened nvt.edr as single precision energy file
-
-Select the terms you want from the following list by
-selecting either (part of) the name or the number or a combination.
-End your selection with an empty line or a zero.
--------------------------------------------------------------------
-  1  G96Angle         2  Proper-Dih.      3  Improper-Dih.    4  LJ-14         
-  5  Coulomb-14       6  LJ-(SR)          7  Disper.-corr.    8  Coulomb-(SR)  
-  9  Coul.-recip.    10  Potential       11  Kinetic-En.     12  Total-Energy  
- 13  Conserved-En.   14  Temperature     15  Pres.-DC        16  Pressure      
- 17  Constr.-rmsd    18  Vir-XX          19  Vir-XY          20  Vir-XZ        
- 21  Vir-YX          22  Vir-YY          23  Vir-YZ          24  Vir-ZX        
- 25  Vir-ZY          26  Vir-ZZ          27  Pres-XX         28  Pres-XY       
- 29  Pres-XZ         30  Pres-YX         31  Pres-YY         32  Pres-YZ       
- 33  Pres-ZX         34  Pres-ZY         35  Pres-ZZ         36  #Surf*SurfTen 
- 37  T-X2IT          38  T-SOL           39  Lamb-X2IT       40  Lamb-SOL      
-
-Reading energy frame      0 time    0.000         Reading energy frame      1 time   10.000         Reading energy frame      2 time   20.000         Reading energy frame      3 time   30.000         Reading energy frame      4 time   40.000         Reading energy frame      5 time   50.000         Reading energy frame      6 time   60.000         Reading energy frame      7 time   70.000         Reading energy frame      8 time   80.000         Reading energy frame      9 time   90.000         Reading energy frame     10 time  100.000         Last energy frame read 10 time  100.000         
-
-GROMACS reminds you: "Science is the great antidote to the poison of enthusiasm and superstition." (Adam Smith, Wealth of Nations, 1776)
-
-
-Statistics over 50001 steps [ 0.0000 through 100.0000 ps ], 1 data sets
-All statistics are over 501 points
-
-Energy                      Average   Err.Est.       RMSD  Tot-Drift
--------------------------------------------------------------------------------
-Temperature                 324.391       0.22    3.61299    1.47903  (K)
-              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx energy, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx energy -f npt.edr -o pressure.xvg
-
-Opened npt.edr as single precision energy file
-
-Select the terms you want from the following list by
-selecting either (part of) the name or the number or a combination.
-End your selection with an empty line or a zero.
--------------------------------------------------------------------
-  1  G96Angle         2  Proper-Dih.      3  Improper-Dih.    4  LJ-14         
-  5  Coulomb-14       6  LJ-(SR)          7  Disper.-corr.    8  Coulomb-(SR)  
-  9  Coul.-recip.    10  Potential       11  Kinetic-En.     12  Total-Energy  
- 13  Conserved-En.   14  Temperature     15  Pres.-DC        16  Pressure      
- 17  Constr.-rmsd    18  Box-X           19  Box-Y           20  Box-Z         
- 21  Volume          22  Density         23  pV              24  Enthalpy      
- 25  Vir-XX          26  Vir-XY          27  Vir-XZ          28  Vir-YX        
- 29  Vir-YY          30  Vir-YZ          31  Vir-ZX          32  Vir-ZY        
- 33  Vir-ZZ          34  Pres-XX         35  Pres-XY         36  Pres-XZ       
- 37  Pres-YX         38  Pres-YY         39  Pres-YZ         40  Pres-ZX       
- 41  Pres-ZY         42  Pres-ZZ         43  #Surf*SurfTen   44  Box-Vel-XX    
- 45  Box-Vel-YY      46  Box-Vel-ZZ      47  T-X2IT          48  T-SOL         
- 49  Lamb-X2IT       50  Lamb-SOL      
-
-Reading energy frame      0 time    0.000         Reading energy frame      1 time   10.000         Reading energy frame      2 time   20.000         Reading energy frame      3 time   30.000         Reading energy frame      4 time   40.000         Reading energy frame      5 time   50.000         Reading energy frame      6 time   60.000         Reading energy frame      7 time   70.000         Reading energy frame      8 time   80.000         Reading energy frame      9 time   90.000         Reading energy frame     10 time  100.000         Last energy frame read 10 time  100.000         
-
-GROMACS reminds you: "Science is the great antidote to the poison of enthusiasm and superstition." (Adam Smith, Wealth of Nations, 1776)
-
-
-Statistics over 50001 steps [ 0.0000 through 100.0000 ps ], 1 data sets
-All statistics are over 501 points
-
-Energy                      Average   Err.Est.       RMSD  Tot-Drift
--------------------------------------------------------------------------------
-Pressure                   -4.54383        4.6    198.351    30.9404  (bar)
-              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx energy, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx energy -f npt.edr -o density.xvg
-
-Opened npt.edr as single precision energy file
-
-Select the terms you want from the following list by
-selecting either (part of) the name or the number or a combination.
-End your selection with an empty line or a zero.
--------------------------------------------------------------------
-  1  G96Angle         2  Proper-Dih.      3  Improper-Dih.    4  LJ-14         
-  5  Coulomb-14       6  LJ-(SR)          7  Disper.-corr.    8  Coulomb-(SR)  
-  9  Coul.-recip.    10  Potential       11  Kinetic-En.     12  Total-Energy  
- 13  Conserved-En.   14  Temperature     15  Pres.-DC        16  Pressure      
- 17  Constr.-rmsd    18  Box-X           19  Box-Y           20  Box-Z         
- 21  Volume          22  Density         23  pV              24  Enthalpy      
- 25  Vir-XX          26  Vir-XY          27  Vir-XZ          28  Vir-YX        
- 29  Vir-YY          30  Vir-YZ          31  Vir-ZX          32  Vir-ZY        
- 33  Vir-ZZ          34  Pres-XX         35  Pres-XY         36  Pres-XZ       
- 37  Pres-YX         38  Pres-YY         39  Pres-YZ         40  Pres-ZX       
- 41  Pres-ZY         42  Pres-ZZ         43  #Surf*SurfTen   44  Box-Vel-XX    
- 45  Box-Vel-YY      46  Box-Vel-ZZ      47  T-X2IT          48  T-SOL         
- 49  Lamb-X2IT       50  Lamb-SOL      
-
-Reading energy frame      0 time    0.000         Reading energy frame      1 time   10.000         Reading energy frame      2 time   20.000         Reading energy frame      3 time   30.000         Reading energy frame      4 time   40.000         Reading energy frame      5 time   50.000         Reading energy frame      6 time   60.000         Reading energy frame      7 time   70.000         Reading energy frame      8 time   80.000         Reading energy frame      9 time   90.000         Reading energy frame     10 time  100.000         Last energy frame read 10 time  100.000         
-
-GROMACS reminds you: "Science is the great antidote to the poison of enthusiasm and superstition." (Adam Smith, Wealth of Nations, 1776)
-
-
-Statistics over 50001 steps [ 0.0000 through 100.0000 ps ], 1 data sets
-All statistics are over 501 points
-
-Energy                      Average   Err.Est.       RMSD  Tot-Drift
--------------------------------------------------------------------------------
-Density                     957.249       0.47    4.83403   -1.17392  (kg/m^3)
-             :-) GROMACS - gmx make_ndx, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx make_ndx, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx make_ndx -f mmc_4265_325K.tpr -o index.ndx
-
-
-Reading structure file
-Reading file mmc_4265_325K.tpr, VERSION 2021.5-EasyBuild-4.7.1 (single precision)
-Reading file mmc_4265_325K.tpr, VERSION 2021.5-EasyBuild-4.7.1 (single precision)
-
-GROMACS reminds you: "Science is the great antidote to the poison of enthusiasm and superstition." (Adam Smith, Wealth of Nations, 1776)
-
-Going to read 0 old index file(s)
-Analysing residue names:
-There are:     1      Other residues
-There are:  4265      Water residues
-Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
-
-  0 System              : 12826 atoms
-  1 Other               :    31 atoms
-  2 X2IT                :    31 atoms
-  3 Water               : 12795 atoms
-  4 SOL                 : 12795 atoms
-  5 non-Water           :    31 atoms
-
- nr : group      '!': not  'name' nr name   'splitch' nr    Enter: list groups
- 'a': atom       '&': and  'del' nr         'splitres' nr   'l': list residues
- 't': atom type  '|': or   'keep' nr        'splitat' nr    'h': help
- 'r': residue              'res' nr         'chain' char
- "name": group             'case': case sensitive           'q': save and quit
- 'ri': residue index
-
-> 
-Copied index group 2 'X2IT'
-
-  6 X2IT                :    31 atoms
-
-> 
-               :-) GROMACS - gmx msd, 2021.5-EasyBuild-4.7.1 (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx msd, version 2021.5-EasyBuild-4.7.1
-Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
-Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
-Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
-Command line:
-  gmx msd -f mmc_4265_325K.xtc -s mmc_4265_325K.tpr -n index.ndx -o msd_mmc_4265_325K.xvg
-
-Reading file mmc_4265_325K.tpr, VERSION 2021.5-EasyBuild-4.7.1 (single precision)
-Reading file mmc_4265_325K.tpr, VERSION 2021.5-EasyBuild-4.7.1 (single precision)
-
-Select a group to calculate mean squared displacement for:
-Group     0 (         System) has 12826 elements
-Group     1 (          Other) has    31 elements
-Group     2 (           X2IT) has    31 elements
-Group     3 (          Water) has 12795 elements
-Group     4 (            SOL) has 12795 elements
-Group     5 (      non-Water) has    31 elements
-Group     6 (           X2IT) has    31 elements
-Select a group: Reading frame       0 time    0.000   Reading frame       1 time   10.000   Reading frame       2 time   20.000   Reading frame       3 time   30.000   Reading frame       4 time   40.000   Reading frame       5 time   50.000   Reading frame       6 time   60.000   Reading frame       7 time   70.000   Reading frame       8 time   80.000   Reading frame       9 time   90.000   Reading frame      10 time  100.000   Reading frame      11 time  110.000   Reading frame      12 time  120.000   Reading frame      13 time  130.000   Reading frame      14 time  140.000   Reading frame      15 time  150.000   Reading frame      16 time  160.000   Reading frame      17 time  170.000   Reading frame      18 time  180.000   Reading frame      19 time  190.000   Reading frame      20 time  200.000   Reading frame      30 time  300.000   Reading frame      40 time  400.000   Reading frame      50 time  500.000   Reading frame      60 time  600.000   Reading frame      70 time  700.000   Reading frame      80 time  800.000   Reading frame      90 time  900.000   Reading frame     100 time 1000.000   Reading frame     110 time 1100.000   Reading frame     120 time 1200.000   Reading frame     130 time 1300.000   Reading frame     140 time 1400.000   Reading frame     150 time 1500.000   Reading frame     160 time 1600.000   Reading frame     170 time 1700.000   Reading frame     180 time 1800.000   Reading frame     190 time 1900.000   Reading frame     200 time 2000.000   Reading frame     300 time 3000.000   Reading frame     400 time 4000.000   Reading frame     500 time 5000.000   Reading frame     600 time 6000.000   Reading frame     700 time 7000.000   Reading frame     800 time 8000.000   Reading frame     900 time 9000.000   Reading frame    1000 time 10000.000   Reading frame    1100 time 11000.000   Reading frame    1200 time 12000.000   Reading frame    1300 time 13000.000   Reading frame    1400 time 14000.000   Reading frame    1500 time 15000.000   Reading frame    1600 time 16000.000   Reading frame    1700 time 17000.000   Reading frame    1800 time 18000.000   Reading frame    1900 time 19000.000   Reading frame    2000 time 20000.000   Reading frame    3000 time 30000.000   Reading frame    4000 time 40000.000   Reading frame    5000 time 50000.000   Reading frame    6000 time 60000.000   /var/spool/slurm/d/job925854/slurm_script: línea 45: 1584056 Hecho                   printf "2\n"
-     1584057 Terminado (killed)      | gmx msd -f mmc_4265_325K.xtc -s mmc_4265_325K.tpr -n index.ndx -o msd_mmc_4265_325K.xvg
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=925854.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
