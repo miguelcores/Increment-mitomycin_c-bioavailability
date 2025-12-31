@@ -1,0 +1,35 @@
+# This file was created Wed Dec  3 18:41:04 2025
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
+# Command line:
+#   gmx energy -f nvt.edr -o temperature.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Green Red Orange Magenta Azure Cyan Skyblue
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000  323.040405
+   10.000000  319.345520
+   20.000000  327.663269
+   30.000000  325.595093
+   40.000000  324.735687
+   50.000000  325.383789
+   60.000000  324.613922
+   70.000000  320.963928
+   80.000000  326.916290
+   90.000000  324.276520
+  100.000000  321.004578

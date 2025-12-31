@@ -1,0 +1,20 @@
+Professor says:
+
+The .4 has 4 versions of gromacs: gmx2021gcc, 2021aocc, 2024gcc and 2024aocc. The .3 3 versions: gmx2021gcc, gmx2021aocc and gmx2024gcc.
+ 
+All of them have similar performances.
+ 
+Before you start the production simulations it is a good idea to do some benchmarks for your system. Check for example how I did it for the DPPC membrane (image attached)
+ 
+This is for example using the three different compilers and different number of cores. As you can see the effect of compiler is not huge. But of course the effect of cores it is. So, I would suggest that we use a specific version/compiler and we perform benchmark runs first. The benchmark runs I did were very simple: a total simulation time of just 2 ns. 
+ 
+And then I change the number of CPUs allocated and I calculate the performance of Gromacs for this number of cores. I repeat until I have a list like the one above.
+ 
+It is important to notice that the scaling you see above depends very strongly on the size of the system (primarily) and on the force field. So, for mmc in the water the trends can be very different.
+ 
+Once we have this table we decide which corresponds to the best usage of resources. It can be just 1 simulation taking the whole computer, or XXX ones each having 16 CPUs or XXX/2 with 32 CPUs etc. The total number of cores is 112. But when you run more than 1 simulation it is a good idea to leave a couple of cores empty.
+
+So which parameters of the below should i change for benchmarking like him: 
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --cpus-per-task=1

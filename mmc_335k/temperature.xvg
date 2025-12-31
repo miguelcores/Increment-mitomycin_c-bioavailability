@@ -1,0 +1,35 @@
+# This file was created Mon Dec 15 16:04:33 2025
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265/mmc_335
+# Command line:
+#   gmx energy -f nvt.edr -o temperature.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000  335.718323
+   10.000000  327.997437
+   20.000000  332.605957
+   30.000000  333.031738
+   40.000000  331.546661
+   50.000000  331.447174
+   60.000000  333.775757
+   70.000000  333.157379
+   80.000000  332.564270
+   90.000000  335.130035
+  100.000000  331.244873

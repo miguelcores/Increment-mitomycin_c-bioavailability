@@ -1,0 +1,67 @@
+HEADER    UNCLASSIFIED                            21-Mar-25
+TITLE     UNITED ATOM STRUCTURE FOR MOLECULE UNK                                
+AUTHOR    AUTOMATED TOPOLOGY BUILDER (ATB) REVISION 2025-01-17 09:57:26
+AUTHOR   2  https://atb.uq.edu.au
+HETATM    1  H18 X2IT    0       5.729  -1.946   0.222  1.00  0.00           H
+HETATM    2   N4 X2IT    0       5.062  -1.270  -0.124  1.00  0.00           N
+HETATM    3  H17 X2IT    0       5.396  -0.620  -0.824  1.00  0.00           H
+HETATM    4  C14 X2IT    0       3.757  -1.657  -0.148  1.00  0.00           C
+HETATM    5   O5 X2IT    0       3.297  -2.615   0.458  1.00  0.00           O
+HETATM    6   O4 X2IT    0       3.024  -0.805  -0.913  1.00  0.00           O
+HETATM    7  C13 X2IT    0       1.601  -1.047  -0.973  1.00  0.00           C
+HETATM    8  C10 X2IT    0       0.874  -0.440   0.233  1.00  0.00           C
+HETATM    9   C9 X2IT    0      -0.627  -0.620   0.170  1.00  0.00           C
+HETATM   10   C4 X2IT    0      -1.250   0.605   0.213  1.00  0.00           C
+HETATM   11   C5 X2IT    0      -2.748   0.787   0.162  1.00  0.00           C
+HETATM   12   O1 X2IT    0      -3.221   1.933   0.246  1.00  0.00           O
+HETATM   13   C6 X2IT    0      -3.538  -0.412   0.036  1.00  0.00           C
+HETATM   14  C12 X2IT    0      -5.040  -0.301  -0.025  1.00  0.00           C
+HETATM   15   C7 X2IT    0      -2.908  -1.642  -0.002  1.00  0.00           C
+HETATM   16   C8 X2IT    0      -1.388  -1.816   0.058  1.00  0.00           C
+HETATM   17   O2 X2IT    0      -0.924  -2.966  -0.017  1.00  0.00           O
+HETATM   18   N3 X2IT    0      -3.551  -2.815  -0.100  1.00  0.00           N
+HETATM   19  H15 X2IT    0      -4.556  -2.885  -0.166  1.00  0.00           H
+HETATM   20  H16 X2IT    0      -2.988  -3.657  -0.132  1.00  0.00           H
+HETATM   21   N2 X2IT    0      -0.377   1.626   0.382  1.00  0.00           N
+HETATM   22   C3 X2IT    0      -0.461   2.999  -0.147  1.00  0.00           C
+HETATM   23   C2 X2IT    0       0.797   3.101  -0.996  1.00  0.00           C
+HETATM   24   H2 X2IT    0       1.194   4.078  -1.253  1.00  0.00           H
+HETATM   25   N1 X2IT    0       0.913   1.983  -1.957  1.00  0.00           N
+HETATM   26  H14 X2IT    0       1.542   2.250  -2.715  1.00  0.00           H
+HETATM   27   C1 X2IT    0       1.682   1.947  -0.698  1.00  0.00           C
+HETATM   28   H1 X2IT    0       2.764   2.018  -0.710  1.00  0.00           H
+HETATM   29  C11 X2IT    0       1.024   1.114   0.396  1.00  0.00           C
+HETATM   30   O3 X2IT    0       1.714   1.493   1.575  1.00  0.00           O
+HETATM   31  C15 X2IT    0       1.085   1.183   2.819  1.00  0.00           C
+CONECT    1    2
+CONECT    2    1    3    4
+CONECT    3    2
+CONECT    4    2    5    6
+CONECT    5    4
+CONECT    6    4    7
+CONECT    7    6    8
+CONECT    8    7    9   29
+CONECT    9    8   10   16
+CONECT   10    9   11   21
+CONECT   11   10   12   13
+CONECT   12   11
+CONECT   13   11   14   15
+CONECT   14   13
+CONECT   15   13   16   18
+CONECT   16    9   15   17
+CONECT   17   16
+CONECT   18   15   19   20
+CONECT   19   18
+CONECT   20   18
+CONECT   21   10   22   29
+CONECT   22   21   23
+CONECT   23   22   24   25   27
+CONECT   24   23
+CONECT   25   23   26   27
+CONECT   26   25
+CONECT   27   23   25   28   29
+CONECT   28   27
+CONECT   29    8   21   27   30
+CONECT   30   29   31
+CONECT   31   30
+END

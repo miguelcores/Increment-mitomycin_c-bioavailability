@@ -1,0 +1,50 @@
+; Run parameters
+integrator               = md
+nsteps                   = 50000       ; 100 ps with 2 fs timestep
+dt                       = 0.002
+
+; Output control
+nstxout                  = 5000
+nstvout                  = 5000
+nstenergy                = 5000
+nstlog                   = 5000
+nstxout-compressed       = 5000         
+
+; Bond parameters
+continuation             = no
+constraint_algorithm     = lincs
+constraints              = all-bonds
+lincs_iter               = 1
+lincs_order              = 4
+
+; Neighborsearching
+cutoff-scheme            = Verlet
+ns_type                  = grid
+nstlist                  = 10
+rcoulomb                 = 1.0
+rvdw                     = 1.0
+
+; Electrostatics
+coulombtype              = PME
+pme_order                = 4
+fourierspacing           = 0.16
+
+; Temperature coupling
+tcoupl                   = V-rescale
+tc-grps                  = X2IT  SOL
+tau_t                    = 0.1   0.1
+ref_t                    = 345   345
+
+; Pressure coupling
+pcoupl                   = no
+
+; Periodic boundary conditions
+pbc                      = xyz
+
+; Dispersion correction
+DispCorr                 = EnerPres
+
+; Velocity generation
+gen_vel                  = yes
+gen_temp                 = 345
+gen_seed                 = -1

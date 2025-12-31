@@ -1,0 +1,26 @@
+; Master topology file for the system (system.top)
+; This file includes all necessary topologies and defines the system composition.
+
+; Include the GROMOS 54A7 force field parameters. 
+; The path is relative to your GROMACS installation's top directory or your working directory.
+#include "../mitomycin_c/gromos54a7_atb.ff/forcefield.itp"
+
+; Include the specific topology file for your molecule.
+#include "../mitomycin_c/mmc.itp"
+
+; Include the water topology (SPC is the standard water model for GROMOS)
+#include "../mitomycin_c/gromos54a7_atb.ff/spc.itp"
+
+; Include topology for standard ions (needed for neutralization later, but good to have)
+#include "../mitomycin_c/gromos54a7_atb.ff/ions.itp"
+
+[ system ]
+; Name of the simulation system
+X2IT Molecule Solvated in SPC Water
+
+[ molecules ]
+; Compound    #mols
+; IMPORTANT: The molecule name (MMC) MUST exactly match the name 
+; defined under the [ moleculetype ] section in your mmc.itp file.
+X2IT           1
+SOL           0 
