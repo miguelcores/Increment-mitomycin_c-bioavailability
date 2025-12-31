@@ -10,3 +10,6 @@
 *.xtc
 *.edr
 *.cpt
+
+# SLURM output files
+*.out
