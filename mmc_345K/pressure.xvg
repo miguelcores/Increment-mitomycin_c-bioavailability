@@ -1,0 +1,35 @@
+# This file was created Mon Dec  8 15:48:43 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs21/bin/gmx
+# Data prefix:  /usr/local/gromacs21
+# Working dir:  /home/gromacs_common/miguelcores/mmc_4265/mmc_345K
+# Command line:
+#   gmx energy -f npt.edr -o pressure.xvg
+# gmx energy is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(bar)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Pressure"
+    0.000000  822.508606
+   10.000000  -242.329697
+   20.000000  -12.803081
+   30.000000  -203.863419
+   40.000000  104.115120
+   50.000000  145.906784
+   60.000000  -139.306641
+   70.000000  -50.036366
+   80.000000  173.360779
+   90.000000  -74.345558
+  100.000000  203.037186

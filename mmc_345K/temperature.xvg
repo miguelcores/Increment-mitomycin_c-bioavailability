@@ -1,0 +1,35 @@
+# This file was created Mon Dec  8 15:48:21 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs21/bin/gmx
+# Data prefix:  /usr/local/gromacs21
+# Working dir:  /home/gromacs_common/miguelcores/mmc_4265/mmc_345K
+# Command line:
+#   gmx energy -f nvt.edr -o temperature.xvg
+# gmx energy is part of G R O M A C S:
+#
+# S  C  A  M  O  R  G
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000  345.517517
+   10.000000  347.817078
+   20.000000  339.752563
+   30.000000  345.335754
+   40.000000  343.637360
+   50.000000  345.760925
+   60.000000  342.755005
+   70.000000  344.311432
+   80.000000  340.841858
+   90.000000  344.760773
+  100.000000  343.604370

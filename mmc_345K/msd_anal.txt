@@ -1,0 +1,5 @@
+No but fit the log log the same period of Gromacs fit
+
+Fitting from 20000 to 180000 ps
+
+D[X2IT] 6.6378 (+/- 3.7037) 1e-5 cm^2/s

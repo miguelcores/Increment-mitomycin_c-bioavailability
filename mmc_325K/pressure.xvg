@@ -1,0 +1,35 @@
+# This file was created Wed Dec  3 18:41:04 2025
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/r727/SCRATCH/miguelcores/mmc_4265_325_1
+# Command line:
+#   gmx energy -f npt.edr -o pressure.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Green Red Orange Magenta Azure Cyan Skyblue
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(bar)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Pressure"
+    0.000000  242.160950
+   10.000000    4.087884
+   20.000000  -112.393913
+   30.000000   47.013546
+   40.000000  -397.556152
+   50.000000  194.147339
+   60.000000   68.699303
+   70.000000  -144.173660
+   80.000000  341.873077
+   90.000000  -71.576996
+  100.000000  -215.051880

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+##----------------------- Start job description -----------------------
+
+#SBATCH --partition=standard
+#SBATCH --job-name=mmc_325K
+#SBATCH --time=96:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=64
+#SBATCH --cpus-per-task=1
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=m.cores@alumnos.upm.es
+
+##----------------------- End job description ------------------------
+
+module load apps/2021
+module load OpenMPI/4.1.4-GCC-12.2.0
+module load GROMACS/2021.5-foss-2021b
+
+export GMX_MAXBACKUP=-1
+#export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+# 1) Energy minimization
+gmx grompp -f ../../minim.mdp -c ../../solvated.gro -p ../../topol.top -o em.tpr -maxwarn 1
+mpirun gmx_mpi mdrun -v -deffnm em
+
+# 2) NVT equilibration
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p ../../topol.top -o nvt.tpr -maxwarn 1
+mpirun gmx_mpi mdrun -deffnm nvt
+
+# 3) NPT equilibration
+gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p ../../topol.top -o npt.tpr -maxwarn 1
+mpirun gmx_mpi mdrun -deffnm npt
+
+# 4) Production at 325 K (500 ns example, adjust md.mdp as needed)
+gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p ../../topol.top -o mmc_325K.tpr -maxwarn 1
+mpirun gmx_mpi mdrun -deffnm mmc_325K

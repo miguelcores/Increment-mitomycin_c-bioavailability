@@ -1,0 +1,31 @@
+#!/bin/bash
+
+##----------------------- Start job description -----------------------
+
+#SBATCH --partition=standard
+#SBATCH --job-name=mmc_315_to_500ns
+#SBATCH --time=96:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --cpus-per-task=2
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=m.cores@alumnos.upm.es
+
+##----------------------- End job description ------------------------
+
+module load apps/2021
+module load OpenMPI/4.1.4-GCC-12.2.0
+module load GROMACS/2021.5-foss-2021b
+
+export GMX_MAXBACKUP=-1
+
+# Extend the simulation time to 500 ns (500000 ps)
+# The previous tpr file is mmc_315K.tpr
+# We use -until 500000 to set the total time to 500 ns
+gmx convert-tpr -s mmc_315K.tpr -until 500000 -o mmc_315K.tpr
+
+# Continue the simulation
+# -cpi specifies the checkpoint file to restart from
+# -noappend creates new output files (part0002) instead of appending to existing ones
+mpirun gmx_mpi mdrun -deffnm mmc_315K -cpi mmc_315K.cpt -noappend
+

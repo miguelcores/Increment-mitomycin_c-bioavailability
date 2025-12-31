@@ -1,0 +1,25 @@
+#!/bin/bash
+
+##----------------------- Start job description -----------------------
+
+#SBATCH --partition=standard
+#SBATCH --job-name=mmc_335K
+#SBATCH --time=96:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=m.cores@alumnos.upm.es
+
+##----------------------- End job description ------------------------
+
+module load apps/2021
+module load OpenMPI/4.1.4-GCC-12.2.0
+module load GROMACS/2021.5-foss-2021b
+
+export GMX_MAXBACKUP=-1
+
+# Continue the simulation
+# -cpi specifies the checkpoint file to restart from
+mpirun gmx_mpi mdrun -deffnm mmc_335K -cpi mmc_335K.cpt -append
+

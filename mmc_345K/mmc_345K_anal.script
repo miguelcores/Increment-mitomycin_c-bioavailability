@@ -1,0 +1,45 @@
+#!/bin/bash
+
+##----------------------- Start job description -----------------------
+
+#SBATCH --partition=standard
+#SBATCH --job-name=mmc_345K_anal
+#SBATCH --time=24:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=m.cores@alumnos.upm.es
+
+##----------------------- End job description ------------------------
+
+module load apps/2021
+module load OpenMPI/4.1.4-GCC-12.2.0
+module load GROMACS/2021.5-foss-2021b
+
+export GMX_MAXBACKUP=-1
+
+echo "GROMACS VERSION USED FOR ANALYSIS:"
+gmx --version
+
+# 1) Energy minimization: potential energy (usually term 10–12; check once interactively)
+# Example: if 'Potential' is entry 10 in gmx energy menu:
+printf "10\n0\n" | gmx energy -f em.edr -o potential.xvg
+
+# 2) NVT equilibration: temperature (usually 'Temperature' term)
+# Example: if 'Temperature' is entry 15:
+printf "14\n0\n" | gmx energy -f nvt.edr -o temperature.xvg
+
+# 3) NPT equilibration: pressure and density
+# Example: if 'Pressure' is 16 and 'Density' is 18:
+printf "16\n0\n" | gmx energy -f npt.edr -o pressure.xvg
+printf "22\n0\n" | gmx energy -f npt.edr -o density.xvg
+
+# 4) MSD analysis of MMC (or X2IT group) from production
+# First, create index file non-interactively.
+# Example: if the group you want is number 2 in the default list, and you just want to keep it:
+printf "2\nq\n" | gmx make_ndx -f mmc_345K.tpr -o index.ndx
+
+# Now compute MSD using that group (assume it is group 2 in index.ndx)
+# MSD: answer both prompts with group 2, then terminate selection with 0 or empty
+printf "2\n" | gmx msd -f full_mmc_345K.xtc -s mmc_345K.tpr -n index.ndx -o msd_mmc_345K.xvg
