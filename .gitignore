@@ -5,8 +5,8 @@
 *.log.*
 
 # GROMACS binary files (optional, uncomment if you want to exclude large binary files)
-# *.tpr
-# *.trr
-# *.xtc
-# *.edr
-# *.cpt
+*.tpr
+*.trr
+*.xtc
+*.edr
+*.cpt
