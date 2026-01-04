@@ -23,7 +23,7 @@ echo "GROMACS VERSION USED FOR ANALYSIS:"
 gmx --version
 
 # creates mmc_315K_0-500ns.xtc containing both the initial run and the 500 ns extension; GROMACS sorts frames by time and handles overlaps
-gmx trjcat -f mmc_315K.xtc mmc_315K.part0002.xtc -o mmc_315K_0-500ns.xtc
+gmx trjcat -f mmc_315K.xtc mmc_315K.part0003.xtc -o mmc_315K_0-500ns.xtc
 
 # Now compute MSD using that group (assume it is group 2 in index.ndx)
 # MSD: answer both prompts with group 2, then terminate selection with 0 or empty
