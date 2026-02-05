@@ -4,8 +4,8 @@ nsteps          = 250000000        ; 500 ns at 2 fs timestep
 dt              = 0.002
 
 ; Output control
-nstxout         = 5000
-nstvout         = 5000
+nstxout         = 0
+nstvout         = 0
 nstenergy       = 5000
 nstlog          = 5000
 nstxout-compressed = 5000          

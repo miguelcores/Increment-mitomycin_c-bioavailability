@@ -1,0 +1,40 @@
+#!/bin/bash
+
+##----------------------- Start job description -----------------------
+#SBATCH --partition=standard
+#SBATCH --job-name=get_gro
+#SBATCH --time=00:30:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+##----------------------- End job description ------------------------
+
+module load apps/2021
+module load OpenMPI/4.1.4-GCC-12.2.0
+module load GROMACS/2021.5-foss-2021b
+
+export GMX_MAXBACKUP=-1
+
+echo "----------------------------------------------------"
+echo "1. Generating Reference Structure (.gro)"
+echo "----------------------------------------------------"
+# We use editconf to extract the system structure from the .tpr
+# This is the "topology/structure" file you load FIRST in VMD (File -> New Molecule)
+gmx editconf -f mmc_310K.tpr -o mmc_310K_ref.gro
+
+echo "----------------------------------------------------"
+echo "2. Generating PBC-Corrected Trajectory (.xtc)"
+echo "----------------------------------------------------"
+# Raw trajectories often have molecules broken across box boundaries.
+# This fixes the visual representation so you can check "integrity".
+# -pbc mol: puts broken molecules back together
+# -center: centers the system in the box
+# Input "1" (Protein/Molecule) for centering, "0" (System) for output
+echo "1 0" | gmx trjconv -s mmc_310K.tpr -f mmc_310K.xtc -o mmc_310K_noPBC.xtc -pbc mol -center
+
+echo "----------------------------------------------------"
+echo "DONE."
+echo "Instructions for VMD:"
+echo "1. File > New Molecule > Browse > Select 'mmc_310K_ref.gro'"
+echo "2. Right-click the molecule > Load Data Into Molecule > Browse > Select 'mmc_310K_noPBC.xtc'"
+echo "   (Use the 'Stride' option here if you want to skip frames)"

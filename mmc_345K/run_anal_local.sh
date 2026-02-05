@@ -2,6 +2,20 @@
 
 # Local workstation script for mmc_345K analysis
 # Replicates the steps from mmc_345K_anal.script
+# Usage: ./run_anal_local.sh [subdir]
+
+# Check if a subdirectory argument is provided
+if [ -n "$1" ]; then
+    RUN_DIR="$1"
+    echo "Analysis directory specified: $RUN_DIR"
+    if [ -d "$RUN_DIR" ]; then
+        cd "$RUN_DIR" || exit
+        echo "Changed directory to $(pwd)"
+    else
+        echo "Error: Directory $RUN_DIR does not exist."
+        exit 1
+    fi
+fi
 
 export GMX_MAXBACKUP=-1
 
