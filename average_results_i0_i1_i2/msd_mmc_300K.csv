@@ -1,0 +1,8 @@
+Parameter,Value
+Temperature,300K
+GROMACS D (1e-5 cm^2/s),0.6288 +/- 0.1525
+Calculated D (1e-5 cm^2/s),1.1246 +/- 0.0335
+Method,Flat region of MSD/(6t)
+Fit Start Time (ps),60010.0
+Fit End Time (ps),210010.0
+Fitted Slope (alpha),1.001677667818495
