@@ -16,3 +16,6 @@
 
 # SLURM output files
 *.out
+
+# Python cache
+__pycache__/
