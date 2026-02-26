@@ -1,0 +1,50 @@
+# This file was created Fri Feb 20 17:10:07 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/SCRATCH/miguelcores/concentration_study/36_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  1015.356445
+   10.000000  975.905762
+   20.000000  976.498474
+   30.000000  983.689697
+   40.000000  985.940125
+   50.000000  984.998474
+   60.000000  988.184204
+   70.000000  984.578003
+   80.000000  983.222595
+   90.000000  992.541504
+  100.000000  980.574768
+  110.000000  981.462097
+  120.000000  987.526855
+  130.000000  982.384583
+  140.000000  986.273071
+  150.000000  978.384521
+  160.000000  986.655151
+  170.000000  979.954224
+  180.000000  974.434448
+  190.000000  981.491211
+  200.000000  990.230896
+  210.000000  983.724976
+  220.000000  986.683350
+  230.000000  988.044861
+  240.000000  979.460938
+  250.000000  989.318665

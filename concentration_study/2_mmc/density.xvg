@@ -1,0 +1,50 @@
+# This file was created Tue Feb 10 16:01:49 2026
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs21/bin/gmx
+# Data prefix:  /usr/local/gromacs21
+# Working dir:  /home/gromacs_common/miguelcores/concentration_study/2_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# GRoups of Organic Molecules in ACtion for Science
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  972.706116
+   10.000000  967.345947
+   20.000000  943.793518
+   30.000000  964.039856
+   40.000000  951.362488
+   50.000000  956.881836
+   60.000000  962.840454
+   70.000000  959.132385
+   80.000000  955.347717
+   90.000000  957.881836
+  100.000000  958.023499
+  110.000000  963.490112
+  120.000000  963.655151
+  130.000000  962.952637
+  140.000000  964.805420
+  150.000000  952.354431
+  160.000000  953.140015
+  170.000000  961.487732
+  180.000000  954.036987
+  190.000000  956.078003
+  200.000000  964.364380
+  210.000000  951.508423
+  220.000000  958.960938
+  230.000000  958.896240
+  240.000000  957.421265
+  250.000000  964.908997

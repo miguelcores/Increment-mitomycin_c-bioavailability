@@ -1,0 +1,50 @@
+# This file was created Tue Feb 10 20:36:44 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/HPC_USERNAME/miguelcores/concentration_study/16_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  988.092529
+   10.000000  979.087646
+   20.000000  971.716125
+   30.000000  965.983582
+   40.000000  967.911804
+   50.000000  965.946838
+   60.000000  965.956787
+   70.000000  966.991150
+   80.000000  975.425476
+   90.000000  971.693359
+  100.000000  970.035095
+  110.000000  964.480408
+  120.000000  969.309570
+  130.000000  964.378784
+  140.000000  968.466431
+  150.000000  966.246460
+  160.000000  969.170166
+  170.000000  976.692932
+  180.000000  974.859558
+  190.000000  973.561584
+  200.000000  974.836121
+  210.000000  974.920898
+  220.000000  962.823181
+  230.000000  970.988647
+  240.000000  973.418823
+  250.000000  962.470215

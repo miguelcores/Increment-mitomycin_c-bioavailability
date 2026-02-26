@@ -1,0 +1,50 @@
+# This file was created Fri Feb 20 20:56:23 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/SCRATCH/miguelcores/concentration_study/56_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  1034.679199
+   10.000000  998.353699
+   20.000000  1001.739258
+   30.000000  1005.496033
+   40.000000  992.054565
+   50.000000  999.114929
+   60.000000  1006.927795
+   70.000000  992.116455
+   80.000000  1004.232361
+   90.000000  997.735535
+  100.000000  1004.482239
+  110.000000  1006.990295
+  120.000000  1000.634033
+  130.000000  1005.299744
+  140.000000  1002.362366
+  150.000000  1006.801025
+  160.000000  1002.037476
+  170.000000  993.359436
+  180.000000  1004.576721
+  190.000000  1001.481384
+  200.000000  1000.301514
+  210.000000  1007.332581
+  220.000000  1000.666382
+  230.000000  998.098877
+  240.000000  1001.736206
+  250.000000  1006.141113

@@ -1,0 +1,50 @@
+# This file was created Thu Feb 12 19:28:27 2026
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs21/bin/gmx
+# Data prefix:  /usr/local/gromacs21
+# Working dir:  /home/gromacs_common/miguelcores/concentration_study/44_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  1013.873779
+   10.000000  985.995544
+   20.000000  989.714172
+   30.000000  986.580078
+   40.000000  988.695557
+   50.000000  990.569031
+   60.000000  994.122131
+   70.000000  989.793457
+   80.000000  995.725830
+   90.000000  981.786865
+  100.000000  984.084351
+  110.000000  1000.439697
+  120.000000  993.467163
+  130.000000  987.731750
+  140.000000  988.846863
+  150.000000  992.360291
+  160.000000  992.435852
+  170.000000  987.755127
+  180.000000  1003.283020
+  190.000000  986.533386
+  200.000000  992.882141
+  210.000000  985.164429
+  220.000000  990.366028
+  230.000000  993.687683
+  240.000000  994.744812
+  250.000000  993.085876

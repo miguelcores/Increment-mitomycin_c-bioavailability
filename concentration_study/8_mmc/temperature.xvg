@@ -1,0 +1,50 @@
+# This file was created Tue Feb 10 15:23:53 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/HPC_USERNAME/miguelcores/concentration_study/8_mmc
+# Command line:
+#   gmx energy -f nvt.edr -o temperature.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000  322.113464
+   10.000000  318.673798
+   20.000000  325.262451
+   30.000000  324.404663
+   40.000000  329.209961
+   50.000000  325.526306
+   60.000000  324.003632
+   70.000000  320.278748
+   80.000000  318.038513
+   90.000000  326.362122
+  100.000000  325.181732
+  110.000000  322.877258
+  120.000000  320.631042
+  130.000000  325.824829
+  140.000000  324.739746
+  150.000000  321.210297
+  160.000000  326.507965
+  170.000000  325.209839
+  180.000000  329.741089
+  190.000000  327.774902
+  200.000000  321.323883
+  210.000000  324.058105
+  220.000000  322.074432
+  230.000000  317.592560
+  240.000000  323.362823
+  250.000000  327.935730

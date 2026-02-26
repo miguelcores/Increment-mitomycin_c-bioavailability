@@ -1,0 +1,50 @@
+# This file was created Sun Feb 22 10:33:46 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/SCRATCH/miguelcores/concentration_study/80_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  1064.718506
+   10.000000  1018.602234
+   20.000000  1018.853088
+   30.000000  1026.726318
+   40.000000  1017.285706
+   50.000000  1025.048096
+   60.000000  1019.208984
+   70.000000  1018.440979
+   80.000000  1024.255859
+   90.000000  1021.607117
+  100.000000  1020.182556
+  110.000000  1019.675537
+  120.000000  1014.863464
+  130.000000  1024.323486
+  140.000000  1022.692505
+  150.000000  1013.048340
+  160.000000  1021.183533
+  170.000000  1022.587585
+  180.000000  1018.965637
+  190.000000  1022.005676
+  200.000000  1030.314087
+  210.000000  1016.795044
+  220.000000  1015.645386
+  230.000000  1020.349304
+  240.000000  1019.606812
+  250.000000  1020.897095

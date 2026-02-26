@@ -1,0 +1,50 @@
+# This file was created Mon Feb 23 16:39:23 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/SCRATCH/miguelcores/concentration_study/72_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Gyas ROwers Mature At Cryogenic Speed
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  1051.453369
+   10.000000  1019.418945
+   20.000000  1018.474121
+   30.000000  1015.025635
+   40.000000  1019.982361
+   50.000000  1014.369629
+   60.000000  1011.086548
+   70.000000  1010.128784
+   80.000000  1012.034424
+   90.000000  1014.196045
+  100.000000  1023.560547
+  110.000000  1013.843811
+  120.000000  1006.849548
+  130.000000  1012.279297
+  140.000000  1013.075867
+  150.000000  1009.933838
+  160.000000  1011.506653
+  170.000000  1015.402161
+  180.000000  1006.387024
+  190.000000  1018.192078
+  200.000000  1014.828613
+  210.000000  1014.150146
+  220.000000  1019.681824
+  230.000000  1015.930481
+  240.000000  1014.807190
+  250.000000  1011.360718

@@ -1,0 +1,50 @@
+# This file was created Tue Feb 10 15:23:53 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/HPC_USERNAME/miguelcores/concentration_study/8_mmc
+# Command line:
+#   gmx energy -f npt.edr -o pressure.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(bar)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Pressure"
+    0.000000  459.705231
+   10.000000  135.619858
+   20.000000   26.768488
+   30.000000  385.150604
+   40.000000  -14.332642
+   50.000000  -231.237595
+   60.000000  -77.798973
+   70.000000  150.631378
+   80.000000  -122.713799
+   90.000000  225.432663
+  100.000000   15.701131
+  110.000000   57.789303
+  120.000000  404.005463
+  130.000000   35.938427
+  140.000000  -165.310120
+  150.000000  -42.833828
+  160.000000   62.039185
+  170.000000  -270.375732
+  180.000000  -254.745071
+  190.000000  -84.442513
+  200.000000  386.364258
+  210.000000  253.406311
+  220.000000  -94.675072
+  230.000000   10.560455
+  240.000000  -176.570129
+  250.000000  -169.156082

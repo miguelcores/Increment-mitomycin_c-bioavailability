@@ -1,0 +1,50 @@
+# This file was created Mon Feb 23 08:58:16 2026
+# Created by:
+#              :-) GROMACS - gmx energy, 2021.5-EasyBuild-4.7.1 (-:
+# 
+# Executable:   /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b/bin/gmx
+# Data prefix:  /media/apps/avx512-2021/software/GROMACS/2021.5-foss-2021b
+# Working dir:  /media/beegfs/home/w481/SCRATCH/miguelcores/concentration_study/88_mmc
+# Command line:
+#   gmx energy -f npt.edr -o density.xvg
+# gmx energy is part of G R O M A C S:
+#
+# GROwing Monsters And Cloning Shrimps
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  1072.311646
+   10.000000  1028.150635
+   20.000000  1027.593140
+   30.000000  1028.690796
+   40.000000  1031.466553
+   50.000000  1023.593262
+   60.000000  1034.185425
+   70.000000  1030.879272
+   80.000000  1025.652466
+   90.000000  1024.084839
+  100.000000  1027.455078
+  110.000000  1028.130005
+  120.000000  1028.723511
+  130.000000  1027.007690
+  140.000000  1020.231445
+  150.000000  1032.829346
+  160.000000  1021.913879
+  170.000000  1032.045166
+  180.000000  1024.283081
+  190.000000  1024.439819
+  200.000000  1024.305176
+  210.000000  1021.484070
+  220.000000  1029.809082
+  230.000000  1023.332703
+  240.000000  1034.157227
+  250.000000  1026.707275
