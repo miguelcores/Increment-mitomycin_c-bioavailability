@@ -19,3 +19,6 @@
 
 # Python cache
 __pycache__/
+
+# folders
+/arch/
