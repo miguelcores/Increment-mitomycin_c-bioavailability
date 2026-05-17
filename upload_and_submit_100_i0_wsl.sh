@@ -4,9 +4,9 @@
 
 set -e
 
-REMOTE_USER="${REMOTE_USER:-your_user}"
-REMOTE_HOST="${REMOTE_HOST:-your.cluster.example.org}"
-REMOTE_ROOT_DEFAULT="${REMOTE_ROOT_DEFAULT:-/path/to/remote/project/root}"
+REMOTE_USER="HPC_USERNAME"
+REMOTE_HOST="HPC_HOST"
+REMOTE_ROOT_DEFAULT="/home/w481/SCRATCH/miguelcores"
 REMOTE_TS_DIR=""
 REMOTE_100_DIR=""
 
@@ -29,12 +29,12 @@ REMOTE_ROOT=$(ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "
 set -e
 if [ -d '$REMOTE_ROOT_DEFAULT' ]; then
     printf '%s' '$REMOTE_ROOT_DEFAULT'
-elif [ -d \"\$HOME/SCRATCH/project_root\" ]; then
-    printf '%s' \"\$HOME/SCRATCH/project_root\"
+elif [ -d \"\$HOME/SCRATCH/miguelcores\" ]; then
+    printf '%s' \"\$HOME/SCRATCH/miguelcores\"
 elif [ -d \"\$HOME/Increment-mitomycin_c-bioavailability\" ]; then
     printf '%s' \"\$HOME/Increment-mitomycin_c-bioavailability\"
 else
-    printf '%s' \"\$HOME/remote_project_root\"
+    printf '%s' \"\$HOME/miguelcores\"
 fi
 ")
 
@@ -53,9 +53,20 @@ ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "rm -rf '$REMOTE_100_DIR' && mkdir -p 
 tar -C "$LOCAL_100_DIR" -cf - . | ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "tar -xf - -C '$REMOTE_100_DIR'"
 
 echo "Submitting i0 jobs remotely..."
-ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "REMOTE_100_DIR='$REMOTE_100_DIR' REMOTE_USER='$REMOTE_USER' bash -s" <<'REMOTE'
+ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" bash -s <<'REMOTE'
 set -e
-cd "$REMOTE_100_DIR"
+if [ -d /home/w481/SCRATCH/miguelcores/temperature_study/100_mmc ]; then
+    cd /home/w481/SCRATCH/miguelcores/temperature_study/100_mmc
+elif [ -d "$HOME/SCRATCH/miguelcores/temperature_study/100_mmc" ]; then
+    cd "$HOME/SCRATCH/miguelcores/temperature_study/100_mmc"
+elif [ -d "$HOME/Increment-mitomycin_c-bioavailability/temperature_study/100_mmc" ]; then
+    cd "$HOME/Increment-mitomycin_c-bioavailability/temperature_study/100_mmc"
+elif [ -d "$HOME/miguelcores/temperature_study/100_mmc" ]; then
+    cd "$HOME/miguelcores/temperature_study/100_mmc"
+else
+    echo "Could not locate remote 100_mmc folder after upload."
+    exit 1
+fi
 
 if [ ! -f submit_all_i0.sh ]; then
     echo "submit_all_i0.sh not found in remote 100_mmc folder"
@@ -75,11 +86,11 @@ sed -i 's/\r$//' submit_all_i0.sh
 chmod +x submit_all_i0.sh
 bash submit_all_i0.sh
 
-echo "\nCurrent queue for $REMOTE_USER:"
-squeue -u "$REMOTE_USER" || true
+echo "\nCurrent queue for HPC_USERNAME:"
+squeue -u HPC_USERNAME || true
 
 echo "\nMMC queue entries:"
-squeue -u "$REMOTE_USER" | grep -E 'mmc_[0-9]+K' || true
+squeue -u HPC_USERNAME | grep -E 'mmc_[0-9]+K' || true
 REMOTE
 
 echo "Closing SSH control connection..."

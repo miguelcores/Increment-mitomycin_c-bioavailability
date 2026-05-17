@@ -3,9 +3,9 @@
 # Sync pre-extracted frame files for temperature_study/100_mmc/i0 and i1.
 
 # Configuration
-REMOTE_USER="${REMOTE_USER:-your_user}"
-REMOTE_HOST="${REMOTE_HOST:-your.cluster.example.org}"
-REMOTE_ROOT="${REMOTE_ROOT:-/path/to/remote/project/root}"
+REMOTE_USER="HPC_USERNAME"
+REMOTE_HOST="HPC_HOST"
+REMOTE_ROOT="/home/w481/SCRATCH/miguelcores"
 LOCAL_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 # Must match the frame interval used when files were created remotely

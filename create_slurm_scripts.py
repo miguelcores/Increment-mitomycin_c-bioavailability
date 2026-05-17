@@ -18,7 +18,7 @@ def main():
 #SBATCH --ntasks-per-node=24
 #SBATCH --cpus-per-task=1
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=user@example.com
+#SBATCH --mail-user=user@institution.org
 
 ##----------------------- End job description ------------------------
 

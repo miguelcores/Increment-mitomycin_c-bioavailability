@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Upload local temperature_study/100_mmc and submit all i1 jobs.
+# Upload local temperature_study/100_mmc to HPC_USERNAME@login1 and submit all i1 jobs.
 
 set -e
 
-REMOTE_USER="${REMOTE_USER:-your_user}"
-REMOTE_HOST="${REMOTE_HOST:-your.cluster.example.org}"
-REMOTE_ROOT="${REMOTE_ROOT:-/path/to/remote/project/root}"
+REMOTE_USER="HPC_USERNAME"
+REMOTE_HOST="HPC_HOST"
+REMOTE_ROOT="/home/r727/SCRATCH/miguelcores"
 REMOTE_TS_DIR="$REMOTE_ROOT/temperature_study"
 REMOTE_100_DIR="$REMOTE_TS_DIR/100_mmc"
 
@@ -34,9 +34,9 @@ ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "rm -rf '$REMOTE_100_DIR' && mkdir -p 
 tar -C "$LOCAL_100_DIR" -cf - . | ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "tar -xf - -C '$REMOTE_100_DIR'"
 
 echo "Submitting i1 jobs remotely..."
-ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "REMOTE_ROOT='$REMOTE_ROOT' REMOTE_USER='$REMOTE_USER' bash -s" <<'REMOTE'
+ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" bash -s <<'REMOTE'
 set -e
-cd "${REMOTE_ROOT}/temperature_study/100_mmc"
+cd /home/r727/SCRATCH/miguelcores/temperature_study/100_mmc
 
 if [ ! -f submit_all_i1.sh ]; then
     echo "submit_all_i1.sh not found in remote 100_mmc folder"
@@ -56,11 +56,11 @@ sed -i 's/\r$//' submit_all_i1.sh
 chmod +x submit_all_i1.sh
 bash submit_all_i1.sh
 
-echo "\nCurrent queue for $REMOTE_USER:"
-squeue -u "$REMOTE_USER" || true
+echo "\nCurrent queue for HPC_USERNAME:"
+squeue -u HPC_USERNAME || true
 
 echo "\nMMC queue entries:"
-squeue -u "$REMOTE_USER" | grep -E 'mmc_[0-9]+K' || true
+squeue -u HPC_USERNAME | grep -E 'mmc_[0-9]+K' || true
 REMOTE
 
 echo "Closing SSH control connection..."

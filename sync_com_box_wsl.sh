@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Configuration
-REMOTE_USER="your_username"
-REMOTE_HOST="your.cluster.hostname"
-REMOTE_PATH="/path/to/remote/project"
+REMOTE_USER="m.cores"
+REMOTE_HOST="magerit"
+REMOTE_PATH="/home/m.cores/SCRATCH/Increment-mitomycin_c-bioavailability"
 
 # Example for alternative cluster:
 # REMOTE_USER="alternative_user"
@@ -97,3 +97,6 @@ echo "Sync complete."
 echo "Folders processed: ${#folders[@]}"
 echo "com_all.xvg: pulled=$com_pulled, missing=$missing_com"
 echo "box/boc.xvg: pulled=$box_pulled, missing=$missing_box"
+
+
+

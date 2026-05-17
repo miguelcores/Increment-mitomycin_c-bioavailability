@@ -5,8 +5,8 @@
 
 set -e
 
-REMOTE_USER="${REMOTE_USER:-your_user}"
-REMOTE_HOST="${REMOTE_HOST:-your.cluster.example.org}"
+REMOTE_USER="${REMOTE_USER:-HPC_USERNAME}"
+REMOTE_HOST="${REMOTE_HOST:-HPC_HOST}"
 REMOTE_ROOT="${REMOTE_ROOT:-}"
 
 LOCAL_ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -32,12 +32,14 @@ ssh $SSH_OPTS -N -f "$REMOTE_USER@$REMOTE_HOST"
 if [ -z "$REMOTE_ROOT" ]; then
     echo "Detecting remote root..."
     REMOTE_ROOT=$(ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "
-if [ -d \"\$HOME/SCRATCH/project_root\" ]; then
-    printf '%s' \"\$HOME/SCRATCH/project_root\"
-elif [ -d \"\$HOME/project_root\" ]; then
-    printf '%s' \"\$HOME/project_root\"
+if [ -d \"\$HOME/SCRATCH/miguelcores\" ]; then
+    printf '%s' \"\$HOME/SCRATCH/miguelcores\"
+elif [ -d /home/w481/SCRATCH/miguelcores ]; then
+    printf '%s' /home/w481/SCRATCH/miguelcores
+elif [ -d /home/r727/SCRATCH/miguelcores ]; then
+    printf '%s' /home/r727/SCRATCH/miguelcores
 else
-    printf '%s' \"\$HOME/remote_project_root\"
+    printf '%s' \"\$HOME/miguelcores\"
 fi
 ")
 fi
@@ -74,3 +76,4 @@ echo "Normalizing line endings on remote scripts..."
 ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "find '$REMOTE_100_DIR' -type f \( -name '*.sh' -o -name '*.script' \) -exec sed -i 's/\r$//' {} +"
 
 echo "Upload complete. Updated files are in $REMOTE_100_DIR"
+

@@ -8,7 +8,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=48
 #SBATCH --cpus-per-task=1
-#SBATCH --mail-type=NONE
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=user@institution.org
 
 ##----------------------- End job description ------------------------
 

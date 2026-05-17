@@ -1,5 +1,5 @@
 param(
-    [string]$RemoteRoot = "your_user@your.cluster.example.org:/path/to/remote/project/root/",
+    [string]$RemoteRoot = "HPC_USERNAME@HPC_HOST:/home/w481/SCRATCH/miguelcores/",
     [string]$LocalRoot = "$PSScriptRoot"
 )
 

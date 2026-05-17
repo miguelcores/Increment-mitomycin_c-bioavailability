@@ -3,9 +3,9 @@
 # Extract and sync trajectory frames for temperature_study/100_mmc/<iX>.
 
 # Configuration
-REMOTE_USER="${REMOTE_USER:-your_user}"
-REMOTE_HOST="${REMOTE_HOST:-your.cluster.example.org}"
-REMOTE_ROOT="${REMOTE_ROOT:-/path/to/remote/project/root}"
+REMOTE_USER="HPC_USERNAME"
+REMOTE_HOST="HPC_HOST"
+REMOTE_ROOT="/home/r727/SCRATCH/miguelcores"
 LOCAL_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 # Frame extraction settings (ps)
@@ -14,8 +14,8 @@ FRAME_DT_PS=50000
 OUTPUT_DIR="."
 
 # Temperatures to process
-temps=(295 300 305)
-iterations=(i0)
+temps=(315 320 325 330 335 340 345 350)
+iterations=(i1)
 
 # SSH connection sharing
 CONTROL_PATH="/tmp/ssh-control-$USER-$$"
@@ -26,18 +26,18 @@ set -e
 echo "Establishing SSH connection to $REMOTE_HOST..."
 ssh $SSH_OPTS -N -f "$REMOTE_USER@$REMOTE_HOST"
 
-echo "Running remote frame extraction for 100_mmc (i0, i1)..."
+echo "Running remote frame extraction for 100_mmc/<iX>..."
 ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" bash -s <<'REMOTE'
 set +e
 
 module purge
 module load GROMACS/2021.5-foss-2021b || module load GROMACS/2021.5 || module load GROMACS || module load gromacs
 
-REMOTE_ROOT="/path/to/remote/project/root"
+REMOTE_ROOT="/home/r727/SCRATCH/miguelcores"
 FRAME_DT_PS=50000
 OUTPUT_DIR="."
-temps=(295 300 305)
-iterations=(i0)
+temps=(315 320 325 330 335 340 345 350)
+iterations=(i1)
 
 for t in "${temps[@]}"; do
   for it in "${iterations[@]}"; do

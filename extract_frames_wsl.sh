@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Configuration
-REMOTE_USER="${REMOTE_USER:-your_user}"
-REMOTE_HOST="${REMOTE_HOST:-your.cluster.example.org}"
-REMOTE_ROOT="${REMOTE_ROOT:-/path/to/remote/project/root}"
+REMOTE_USER="HPC_USERNAME"
+REMOTE_HOST="HPC_HOST"
+REMOTE_ROOT="/home/w481/SCRATCH/miguelcores"
 LOCAL_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 # Frame extraction settings (ps)
@@ -11,8 +11,10 @@ LOCAL_ROOT="$(cd "$(dirname "$0")" && pwd)"
 FRAME_DT_PS=50000
 OUTPUT_DIR="."
 
-# Concentrations to process
-concentrations=(2 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100)
+# Temperatures and concentrations to process.
+# Edit these lists to choose the combinations you want.
+temperatures=(300)
+concentrations=(8 16 32)
 
 # SSH connection sharing
 CONTROL_PATH="/tmp/ssh-control-$USER-$$"
@@ -30,53 +32,60 @@ set +e
 module purge
 module load GROMACS/2021.5-foss-2021b || module load GROMACS/2021.5 || module load GROMACS || module load gromacs
 
-REMOTE_ROOT="/path/to/remote/project/root"
+REMOTE_ROOT="/home/w481/SCRATCH/miguelcores"
 FRAME_DT_PS=50000
 OUTPUT_DIR="."
 
-concentrations=(2 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100)
+temperatures=(300)
+concentrations=(8 16 32)
 
-for conc in "${concentrations[@]}"; do
-    folder="$REMOTE_ROOT/concentration_study/${conc}_mmc"
-    xtc="$folder/mmc_${conc}_325K.xtc"
-    tpr="$folder/mmc_${conc}_325K.tpr"
+for temp in "${temperatures[@]}"; do
+    temp_label="${temp}K"
+    for conc in "${concentrations[@]}"; do
+        folder="$REMOTE_ROOT/concentration_study/${temp_label}/${conc}_mmc"
+        xtc="$folder/mmc_${conc}_${temp_label}.xtc"
+        tpr="$folder/mmc_${conc}_${temp_label}.tpr"
 
-    if [ ! -f "$xtc" ] || [ ! -f "$tpr" ]; then
-        echo "[SKIP] ${conc}_mmc: missing .xtc or .tpr"
-        continue
-    fi
+        if [ ! -f "$xtc" ] || [ ! -f "$tpr" ]; then
+            echo "[SKIP] ${temp_label}/${conc}_mmc: missing .xtc or .tpr"
+            continue
+        fi
 
-    mkdir -p "$folder/$OUTPUT_DIR"
+        mkdir -p "$folder/$OUTPUT_DIR"
 
-    out="$folder/$OUTPUT_DIR/frames_mmc_${conc}_325K_${FRAME_DT_PS}ps.pdb"
-    # Extract a single multi-model PDB with snapshots every FRAME_DT_PS
-    # Provide both selection prompts (e.g., "System" twice)
-    printf "0\n0\n" | gmx trjconv -s "$tpr" -f "$xtc" -o "$out" -dt "$FRAME_DT_PS" -pbc mol -center -ur compact >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        echo "[SKIP] ${conc}_mmc: trjconv failed"
-        continue
-    fi
+        out="$folder/$OUTPUT_DIR/frames_mmc_${conc}_${temp_label}_${FRAME_DT_PS}ps.pdb"
+        # Extract a single multi-model PDB with snapshots every FRAME_DT_PS
+        # Provide both selection prompts (e.g., "System" twice)
+        printf "0\n0\n" | gmx trjconv -s "$tpr" -f "$xtc" -o "$out" -dt "$FRAME_DT_PS" -pbc mol -center -ur compact >/dev/null 2>&1
+        if [ $? -ne 0 ]; then
+            echo "[SKIP] ${temp_label}/${conc}_mmc: trjconv failed"
+            continue
+        fi
 
-    echo "[OK] ${conc}_mmc: wrote frames_mmc_${conc}_325K_${FRAME_DT_PS}ps.pdb"
+        echo "[OK] ${temp_label}/${conc}_mmc: wrote frames_mmc_${conc}_${temp_label}_${FRAME_DT_PS}ps.pdb"
+    done
 done
 REMOTE
 
 echo "Syncing frames to local machine..."
-for conc in "${concentrations[@]}"; do
-    folder="${conc}_mmc"
-    local_dir="$LOCAL_ROOT/concentration_study/$folder"
-    remote_file="$REMOTE_ROOT/concentration_study/$folder/frames_mmc_${conc}_325K_${FRAME_DT_PS}ps.pdb"
+for temp in "${temperatures[@]}"; do
+    temp_label="${temp}K"
+    for conc in "${concentrations[@]}"; do
+        folder="${conc}_mmc"
+        local_dir="$LOCAL_ROOT/concentration_study/$temp_label/$folder"
+        remote_file="$REMOTE_ROOT/concentration_study/$temp_label/$folder/frames_mmc_${conc}_${temp_label}_${FRAME_DT_PS}ps.pdb"
 
-    mkdir -p "$local_dir"
+        mkdir -p "$local_dir"
 
-    if ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "[ -f '$remote_file' ]"; then
-        scp -q $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST:$remote_file" "$local_dir/" || true
-    else
-        echo "[SKIP] ${folder}: no frames file"
-    fi
+        if ssh $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST" "[ -f '$remote_file' ]"; then
+            scp -q $SSH_OPTS "$REMOTE_USER@$REMOTE_HOST:$remote_file" "$local_dir/" || true
+        else
+            echo "[SKIP] ${temp_label}/${folder}: no frames file"
+        fi
+    done
 done
 
 # Close SSH connection
 ssh -O exit -o ControlPath="$CONTROL_PATH" "$REMOTE_USER@$REMOTE_HOST" 2>/dev/null
 
-echo "Done. Frames are under concentration_study/<N>_mmc/frames_mmc_<N>_325K_${FRAME_DT_PS}ps.pdb"
+echo "Done. Frames are under concentration_study/<TEMP>K/<N>_mmc/frames_mmc_<N>_<TEMP>K_${FRAME_DT_PS}ps.pdb"
